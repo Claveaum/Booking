@@ -10,7 +10,7 @@ import {OnInit} from "angular2/core";
 import {HTTP_PROVIDERS} from "angular2/http";
 @Component({
     selector: 'my-app',
-    templateUrl:'app/app.html',
+    templateUrl:'../html/app.html',
     providers:[FlightService,HTTP_PROVIDERS],
 })
 export class AppComponent{

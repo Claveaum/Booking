@@ -26,14 +26,13 @@
     <script>
         System.config({
             packages: {
-                app: {
-                    format: 'register',
-                    defaultExtension: 'js'
-                }
+                    build:{
+                        format: 'register',
+                        defaultExtension: 'js'
+                    }
             }
         });
-        System.import('app/boot')
-                .then(null, console.error.bind(console));
+        System.import('build/boot').then(null, console.error.bind(console));
     </script>
 
 </head>
