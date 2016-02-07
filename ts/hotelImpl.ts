@@ -6,10 +6,12 @@ export class HotelImpl implements HotelInterface {
     name:string;
     location:string;
     price:number;
+    comment:string;
 
     constructor(name:string,
                 location:string,
-                price:number) {
+                price:number,
+                comment:string) {
     }
 
 

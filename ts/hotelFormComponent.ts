@@ -12,7 +12,7 @@ import {HotelInterface} from "./hotelInterface";
     providers:[HotelService,HTTP_PROVIDERS],
 })
 export class HotelFormComponent{
-    model = new HotelImpl('','',0);
+    model = new HotelImpl('','',0,'');
     public hotels : HotelInterface[];
     submitted = false;
     onSubmit() {
@@ -21,7 +21,7 @@ export class HotelFormComponent{
 
     active = true;
     newHotel() {
-        this.model = new HotelImpl('','',0);
+        this.model = new HotelImpl('','',0,'');
         this.active = false;
         setTimeout(()=> this.active=true, 0);
     }
