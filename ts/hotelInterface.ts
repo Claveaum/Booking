@@ -4,4 +4,5 @@
 export interface HotelInterface {
     name : string;
     location : string;
+    price : number;
 }
