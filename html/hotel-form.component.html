@@ -1,0 +1,11 @@
+<ul *ngIf="hotels" class="collection with-header">
+    <li class="collection-header"><h4>Liste des hotels disponibles pour le trajet {{model.airport_departure}} - {{model.airport_arrival}} </h4></li>
+    <li class="collection-item" *ngFor="#hotel of hotels">
+        <div>
+            <div class="collapsible-header"><i class="material-icons">{{hotel.name}} - {{hotel.price}} €</i>First</div>
+            <div class="collapsible-body"><p>{{hotel.comment}}</p></div>
+
+            <a href="#!" class="secondary-content"><i class="material-icons">send</i></a>
+        </div>
+    </li>
+</ul>
