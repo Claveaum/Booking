@@ -16,12 +16,10 @@ import {FlightFormComponent} from "./flightFormComponent";
     directives: [FlightFormComponent],
 })
 export class AppComponent{
-    public title = 'Formulaire réservation';
-    public flights: FlightInterface[];
-    constructor(private _flightService: FlightService) { };
-
-    public hotels: HotelInterface[];
+    public selectedFlights: FlightInterface[];
+    public selectedHotels: HotelInterface[];
     public reservation : Reservation;
 
+    get test() { return JSON.stringify(this.selectedFlights); }
 
 }
