@@ -1,7 +1,7 @@
 /**
  * Created by mclaveau on 01/02/2016.
  */
-export interface Hotel {
+export interface HotelInterface {
     name : string;
     location : string;
 }

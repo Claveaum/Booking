@@ -1,5 +1,5 @@
 import {FlightInterface} from "./flightInterface";
-import {Hotel} from "./hotel";
+import {Hotel} from "./hotelInterface";
 /**
  * Created by mclaveau on 01/02/2016.
  */

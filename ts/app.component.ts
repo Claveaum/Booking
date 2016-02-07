@@ -3,7 +3,7 @@
  */
 import {Component} from 'angular2/core';
 import {FlightInterface} from "./flightInterface";
-import {Hotel} from "./hotel";
+import {HotelInterface} from "./hotelInterface";
 import {Reservation} from "./reservation";
 import {FlightService} from "./flightService";
 import {OnInit} from "angular2/core";
@@ -20,7 +20,7 @@ export class AppComponent{
     public flights: FlightInterface[];
     constructor(private _flightService: FlightService) { };
 
-    public hotels: Hotel[];
+    public hotels: HotelInterface[];
     public reservation : Reservation;
 
 
