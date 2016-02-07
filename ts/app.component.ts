@@ -16,10 +16,13 @@ import {FlightFormComponent} from "./flightFormComponent";
     directives: [FlightFormComponent],
 })
 export class AppComponent{
-    public selectedFlights: FlightInterface[];
+    public selectedFlight: FlightInterface;
     public selectedHotels: HotelInterface[];
     public reservation : Reservation;
 
-    get test() { return JSON.stringify(this.selectedFlights); }
+    updateFlight(updatedFlight :FlightInterface){
+        this.selectedFlight = updatedFlight;
+    }
+    get test() { return JSON.stringify(this.selectedFlight); }
 
 }

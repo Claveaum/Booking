@@ -5,6 +5,9 @@ import {OnInit} from "angular2/core";
 import {HTTP_PROVIDERS} from "angular2/http";
 import {FlightService} from "./flightService";
 import {FlightInterface} from "./flightInterface";
+import OutputFile = ts.OutputFile;
+import {Output} from "angular2/core";
+import {EventEmitter} from "angular2/core";
 
 @Component({
     selector: 'flight-form',
@@ -14,6 +17,7 @@ import {FlightInterface} from "./flightInterface";
 export class FlightFormComponent{
     model = new FlightImpl('','','','','');
     public flights : FlightInterface[];
+    @Output() flightEvent = new EventEmitter();
     submitted = false;
     onSubmit() {
         this.submitted = true;
@@ -31,6 +35,10 @@ export class FlightFormComponent{
             .subscribe(
                 f => this.flights = f,
                 error => alert(`Server error. Try again later`));
+    }
+
+    onClickFlight(flight : FlightInterface){
+        this.flightEvent.emit(flight);
     }
 
 
