@@ -1,7 +1,7 @@
 /**
  * Created by mclaveau on 01/02/2016.
  */
-export interface Flight {
+export interface FlightInterface {
     number: string;
     date_departure: string;
     date_arrival: string;

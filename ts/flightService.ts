@@ -1,6 +1,6 @@
 import {Injectable} from 'angular2/core';
 import {Http}       from 'angular2/http';
-import {Flight}       from './flight';
+import {FlightInterface}       from './flightInterface';
 import {Observable} from 'rxjs/Rx';
 import {RequestOptions} from "angular2/http";
 import {RequestMethod} from "angular2/http";
@@ -24,7 +24,7 @@ export class FlightService {
         });
 
         return this.http.get(this._flightUrl, options)
-            .map(res => <Flight[]> res.json())
+            .map(res => <FlightInterface[]> res.json())
             .catch(this.logAndPassOn);
     }
 
