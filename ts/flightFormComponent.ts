@@ -21,11 +21,7 @@ export class FlightFormComponent{
     }
 
     active = true;
-    newFlight() {
-        this.model = new FlightImpl('','','','','');
-        this.active = false;
-        setTimeout(()=> this.active=true, 0);
-    }
+
     // TODO: Remove this when we're done
     get diagnostic() { return JSON.stringify(this.flights); }
 

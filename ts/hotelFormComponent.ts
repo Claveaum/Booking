@@ -20,11 +20,7 @@ export class HotelFormComponent{
     }
 
     active = true;
-    newHotel() {
-        this.model = new HotelImpl('','',0,'');
-        this.active = false;
-        setTimeout(()=> this.active=true, 0);
-    }
+
     // TODO: Remove this when we're done
     get diagnostic() { return JSON.stringify(this.hotels); }
 
