@@ -22,6 +22,6 @@
 
     <ul *ngIf="submitted" class="collection with-header">
         <li class="collection-header"><h4>Liste des vols {{model.airport_departure}} - {{model.airport_arrival}} </h4></li>
-        <li class="collection-item" *ngFor="#flight of flights"><div>{{flight.date_departure}}<a href="#!" class="secondary-content"><i class="material-icons">send</i></a></div></li>
+        <li class="collection-item" *ngFor="#flight of flights"><div>{{flight.date_departure}} - {{flight.date_arrival}}<a href="#!" class="secondary-content"><i class="material-icons">send</i></a></div></li>
     </ul>
 </div>
