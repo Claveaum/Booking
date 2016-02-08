@@ -1,11 +1,10 @@
 import {Component} from 'angular2/core';
 import {NgForm}    from 'angular2/common';
-import {FlightImpl} from "./flightImpl";
+import {FlightImpl} from "./FlightImpl";
 import {OnInit} from "angular2/core";
 import {HTTP_PROVIDERS} from "angular2/http";
 import {FlightService} from "./flightService";
 import {FlightInterface} from "./flightInterface";
-import OutputFile = ts.OutputFile;
 import {Output} from "angular2/core";
 import {EventEmitter} from "angular2/core";
 
@@ -21,7 +20,7 @@ export class FlightFormComponent{
     submitted = false;
     onSubmit() {
         this.submitted = true;
-        this.flights = this.searchFlight(this.model.airport_departure,this.model.airport_arrival,this.model.date_departure);
+        this.searchFlight(this.model.airport_departure,this.model.airport_arrival,this.model.date_departure);
     }
 
     active = true;

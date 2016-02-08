@@ -22,7 +22,7 @@ export class HotelFormComponent{
 
     active = true;
 
-    @Input set mapFlight(flight: FlightInterface){
+    @Input() set mapFlight(flight: FlightInterface){
         this.searchHotel(flight);
     }
 
