@@ -1,10 +1,11 @@
 import {Component} from 'angular2/core';
 import {NgForm}    from 'angular2/common';
 import {HotelImpl} from "./hotelImpl";
-import {OnInit} from "angular2/core";
 import {HTTP_PROVIDERS} from "angular2/http";
 import {HotelService} from "./hotelService";
 import {HotelInterface} from "./hotelInterface";
+import {Input} from "angular2/core";
+import {FlightInterface} from "./flightInterface";
 
 @Component({
     selector: 'hotel-form',
@@ -20,6 +21,10 @@ export class HotelFormComponent{
     }
 
     active = true;
+
+    @Input set mapFlight(flight: FlightInterface){
+        this.searchHotel(flight);
+    }
 
     // TODO: Remove this when we're done
     get diagnostic() { return JSON.stringify(this.hotels); }

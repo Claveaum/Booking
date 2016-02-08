@@ -9,11 +9,12 @@ import {FlightService} from "./flightService";
 import {OnInit} from "angular2/core";
 import {HTTP_PROVIDERS} from "angular2/http";
 import {FlightFormComponent} from "./flightFormComponent";
+import {HotelFormComponent} from "./hotelFormComponent";
 @Component({
     selector: 'my-app',
     templateUrl:'../html/app.html',
     providers:[FlightService,HTTP_PROVIDERS],
-    directives: [FlightFormComponent],
+    directives: [FlightFormComponent,HotelFormComponent],
 })
 export class AppComponent{
     public selectedFlight: FlightInterface;
