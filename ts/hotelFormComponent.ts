@@ -1,10 +1,9 @@
-import {Component} from 'angular2/core';
+import {Component,Input} from 'angular2/core';
 import {NgForm}    from 'angular2/common';
-import {HotelImpl} from "./hotelImpl";
 import {HTTP_PROVIDERS} from "angular2/http";
+import {HotelImpl} from "./hotelImpl";
 import {HotelService} from "./hotelService";
 import {HotelInterface} from "./hotelInterface";
-import {Input} from "angular2/core";
 import {FlightInterface} from "./flightInterface";
 
 @Component({

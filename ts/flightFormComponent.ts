@@ -1,12 +1,9 @@
-import {Component} from 'angular2/core';
+import {Component,EventEmitter,OnInit,Output} from 'angular2/core';
 import {NgForm}    from 'angular2/common';
-import {FlightImpl} from "./FlightImpl";
-import {OnInit} from "angular2/core";
 import {HTTP_PROVIDERS} from "angular2/http";
+import {FlightImpl} from "./FlightImpl";
 import {FlightService} from "./flightService";
 import {FlightInterface} from "./flightInterface";
-import {Output} from "angular2/core";
-import {EventEmitter} from "angular2/core";
 
 @Component({
     selector: 'flight-form',

@@ -1,10 +1,7 @@
 import {Injectable} from 'angular2/core';
-import {Http}       from 'angular2/http';
+import {Http,RequestMethod,RequestOptions,URLSearchParams} from 'angular2/http';
 import {FlightInterface}       from './flightInterface';
 import {Observable} from 'rxjs/Rx';
-import {RequestOptions} from "angular2/http";
-import {RequestMethod} from "angular2/http";
-import {URLSearchParams} from "angular2/http";
 
 @Injectable()
 export class FlightService {

@@ -1,13 +1,12 @@
 /**
  * Created by mclaveau on 01/02/2016.
  */
-import {Component} from 'angular2/core';
+import {Component,OnInit} from 'angular2/core';
+import {HTTP_PROVIDERS} from "angular2/http";
 import {FlightInterface} from "./flightInterface";
 import {HotelInterface} from "./hotelInterface";
 import {Reservation} from "./reservation";
 import {FlightService} from "./flightService";
-import {OnInit} from "angular2/core";
-import {HTTP_PROVIDERS} from "angular2/http";
 import {FlightFormComponent} from "./flightFormComponent";
 import {HotelFormComponent} from "./hotelFormComponent";
 @Component({
