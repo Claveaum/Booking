@@ -1,6 +1,6 @@
 import {Injectable} from 'angular2/core';
 import {Http}       from 'angular2/http';
-import {BookingInterface}       from './bookingInterface';
+import {BookingInterface}       from '../model/bookingInterface';
 import {Observable} from 'rxjs/Rx';
 
 @Injectable()

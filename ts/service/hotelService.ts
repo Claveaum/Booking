@@ -3,7 +3,7 @@
  */
 import {Injectable} from 'angular2/core';
 import {Http}       from 'angular2/http';
-import {HotelInterface}       from './hotelInterface';
+import {HotelInterface}       from '../model/hotelInterface';
 import {Observable} from 'rxjs/Rx';
 
 @Injectable()

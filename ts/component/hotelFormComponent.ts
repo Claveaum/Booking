@@ -1,10 +1,10 @@
 import {Component,Input} from 'angular2/core';
 import {NgForm}    from 'angular2/common';
 import {HTTP_PROVIDERS} from "angular2/http";
-import {HotelImpl} from "./hotelImpl";
-import {HotelService} from "./hotelService";
-import {HotelInterface} from "./hotelInterface";
-import {FlightInterface} from "./flightInterface";
+import {HotelImpl} from "../model/hotelImpl";
+import {HotelService} from "../service/hotelService";
+import {HotelInterface} from "../model/hotelInterface";
+import {FlightInterface} from "../model/flightInterface";
 
 @Component({
     selector: 'hotel-form',

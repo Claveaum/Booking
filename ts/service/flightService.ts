@@ -1,6 +1,6 @@
 import {Injectable} from 'angular2/core';
 import {Http,RequestMethod,RequestOptions,URLSearchParams} from 'angular2/http';
-import {FlightInterface}       from './flightInterface';
+import {FlightInterface}       from '../model/flightInterface';
 import {Observable} from 'rxjs/Rx';
 
 @Injectable()

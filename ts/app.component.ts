@@ -3,12 +3,12 @@
  */
 import {Component,OnInit} from 'angular2/core';
 import {HTTP_PROVIDERS} from "angular2/http";
-import {FlightInterface} from "./flightInterface";
-import {HotelInterface} from "./hotelInterface";
-import {Reservation} from "./reservation";
-import {FlightService} from "./flightService";
-import {FlightFormComponent} from "./flightFormComponent";
-import {HotelFormComponent} from "./hotelFormComponent";
+import {FlightInterface} from "./model/flightInterface";
+import {HotelInterface} from "./model/hotelInterface";
+import {Reservation} from "./model/reservation";
+import {FlightService} from "./service/flightService";
+import {FlightFormComponent} from "./component/flightFormComponent";
+import {HotelFormComponent} from "./component/hotelFormComponent";
 @Component({
     selector: 'my-app',
     templateUrl:'../html/app.html',

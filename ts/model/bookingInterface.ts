@@ -1,5 +1,5 @@
-import {FlightInterface} from "./flightInterface";
-import {HotelInterface} from "./hotelInterface";
+import {FlightInterface} from "../model/flightInterface";
+import {HotelInterface} from "../model/hotelInterface";
 
 export interface BookingInterface {
     flight: FlightInterface;

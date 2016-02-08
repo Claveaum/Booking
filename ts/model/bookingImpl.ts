@@ -1,5 +1,5 @@
 import {BookingInterface} from "./bookingInterface";
-import {FlightImpl} from "./FlightImpl";
+import {FlightImpl} from "./flightImpl";
 import {HotelImpl} from "./hotelImpl";
 export class BookingImpl implements BookingInterface {
     flight:FlightImpl;
