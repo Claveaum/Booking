@@ -1,17 +1,14 @@
 import {BookingInterface} from "./bookingInterface";
-import {FlightImpl} from "./flightImpl";
-import {HotelImpl} from "./hotelImpl";
-export class BookingImpl implements BookingInterface {
-    flight:FlightImpl;
-    flight2:FlightImpl;
-    hotel:HotelImpl;
-    price:number;
+import {FlightInterface} from "./flightInterface";
+import {HotelInterface} from "./hotelInterface";
 
-    constructor(flight:FlightImpl,
-                flight2:FlightImpl,
-                hotel:HotelImpl,
-                price:number) {
+export class BookingImpl implements BookingInterface {
+    price(): number {
+        return this.flight.price + this.hotel.price;
     }
+
+    constructor(public flight?: FlightInterface,
+                public hotel?:HotelInterface) {}
 
 
 }

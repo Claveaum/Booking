@@ -7,4 +7,5 @@ export interface FlightInterface {
     date_arrival: string;
     airport_departure: string;
     airport_arrival: string;
+    price: number;
 }

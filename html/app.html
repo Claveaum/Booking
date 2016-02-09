@@ -1,2 +1,3 @@
-<flight-form (flightEvent)="updateFlight($event)"></flight-form>
-<hotel-form [flight]="selectedFlight" (hotel-selected)="updateHotel($event)"></hotel-form>
+<flight-form *ngIf="!bookingComplete && !booking.flight" (flightEvent)="updateFlight($event)"></flight-form>
+<hotel-form *ngIf="!bookingComplete && booking.flight && !booking.hotel" [flight]="booking.flight" (hotel-selected)="updateHotel($event)"></hotel-form>
+<booking-form *ngIf="bookingComplete" [model]="booking" ></booking-form>

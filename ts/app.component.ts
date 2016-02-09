@@ -5,29 +5,33 @@ import {Component,OnInit} from 'angular2/core';
 import {HTTP_PROVIDERS} from "angular2/http";
 import {FlightInterface} from "./model/flightInterface";
 import {HotelInterface} from "./model/hotelInterface";
-import {Reservation} from "./model/reservation";
+import {BookingInterface} from './model/bookingInterface';
+import {BookingImpl} from './model/bookingImpl';
 import {FlightService} from "./service/flightService";
 import {FlightFormComponent} from "./component/form/flightFormComponent";
 import {HotelFormComponent} from "./component/form/hotelFormComponent";
+import {BookingFormComponent} from "./component/form/bookingFormComponent";
 
 @Component({
     selector: 'my-app',
     templateUrl:'../html/app.html',
     providers:[FlightService,HTTP_PROVIDERS],
-    directives: [FlightFormComponent,HotelFormComponent],
+    directives: [FlightFormComponent,HotelFormComponent,BookingFormComponent]
 })
 export class AppComponent{
-    public selectedFlight: FlightInterface;
-    public selectedHotel: HotelInterface;
-    public reservation : Reservation;
+    public booking: BookingInterface = new BookingImpl();
+    
+    /** Set to true when all of booking has been filled */
+    private bookingComplete: boolean = false;
 
     updateFlight(updatedFlight :FlightInterface){
-        this.selectedFlight = updatedFlight;
+        this.booking.flight = updatedFlight;
+        // Ensure location will be the same
+        this.bookingComplete = false;
     }
     
     private updateHotel(updatedHotel: HotelInterface): void {
-        this.selectedHotel = updatedHotel;
+        this.booking.hotel = updatedHotel;
+        this.bookingComplete = true;
     }
-    get test() { return JSON.stringify(this.selectedFlight); }
-
 }

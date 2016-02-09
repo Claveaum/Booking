@@ -7,10 +7,10 @@
                     <div>
                         <h4>Départ : </h4>
                         <div>
-                            <label>Décollage : </label>{{model.flight.airport_departure}} le {{flight.date_departure}}
+                            <label>Décollage : </label>{{model.flight.airport_departure}} le {{model.flight.date_departure | dateFromString:'mediumDate'}}
                         </div>
                         <div>
-                            <label>Attérissage : </label>{{model.flight.airport_arrival}} le {{flight.date_arrival}}
+                            <label>Atterissage : </label>{{model.flight.airport_arrival}} le {{model.flight.date_arrival | dateFromString:'mediumDate'}}
                         </div>
                     </div>
                     <div>
@@ -19,7 +19,7 @@
                             <label>Nom : </label>{{model.hotel.name}}
                         </div>
                     </div>
-                    <div>
+                    <!--<div>
                         <h4>Retour : </h4>
                         <div>
                             <label>Décollage : </label>{{model.flight2.airport_departure}} le {{flight2.date_departure}}
@@ -27,20 +27,15 @@
                         <div>
                             <label>Attérissage : </label>{{model.flight2.airport_arrival}} le {{flight2.date_arrival}}
                         </div>
-                    </div>
+                    </div>-->
 
                     <div>
                         <h4>Prix : </h4>
-                        <div>
-                            <label>Hotel : </label>{{model.hotel.price}}
-                        </div>
-                        <div>
-                            <label>TOTAL : </label>{{model.price}}
-                        </div>
+                        <div>{{ model.price() | currency }}</div>
                     </div>
                 </div>
                 <div class="card-action">
-                    <a href="#">Paiement</a>
+                    <a href="#" (click)="checkout()">Paiement</a>
                 </div>
             </div>
         </div>

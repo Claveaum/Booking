@@ -5,7 +5,17 @@ import {Observable} from 'rxjs/Rx';
 
 @Injectable()
 export class BookingService {
+    private static url = 'http://localhost:5300/reservation';
+    
     constructor(private http:Http) {
+    }
+
+    /**
+     * Checkout the given booking
+     */
+    public checkout(booking: BookingInterface): void {
+        this.http.post(BookingService.url, JSON.stringify(booking))
+            .subscribe(console.log, console.error);
     }
 
     private logAndPassOn(error:Error) {
