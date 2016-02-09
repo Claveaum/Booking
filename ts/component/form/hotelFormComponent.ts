@@ -1,6 +1,7 @@
 import {Component,Input} from 'angular2/core';
 import {NgForm}    from 'angular2/common';
 import {HTTP_PROVIDERS} from "angular2/http";
+import {Observable} from 'rxjs/Rx';
 import {HotelImpl} from "../../model/hotelImpl";
 import {HotelService} from "../../service/hotelService";
 import {HotelInterface} from "../../model/hotelInterface";
@@ -12,29 +13,35 @@ import {FlightInterface} from "../../model/flightInterface";
     providers:[HotelService,HTTP_PROVIDERS],
 })
 export class HotelFormComponent{
-    model = new HotelImpl('','',0,'');
-    public hotels : HotelInterface[];
-    submitted = false;
-    onSubmit() {
-        this.submitted = true;
+    /** Arrival flight */
+    private model: FlightInterface;
+    
+    /** Flight setter */
+    @Input('flight') set setFlight(_flight: FlightInterface) {
+        this.model = _flight;
+        this.search();
     }
-
-    active = true;
-
-    @Input() set mapFlight(flight: FlightInterface){
-        this.searchHotel(flight);
-    }
-
-    // TODO: Remove this when we're done
-    get diagnostic() { return JSON.stringify(this.hotels); }
-
-    constructor(private _hotelService: HotelService) { };
-    searchHotel(arr) {
-        this._hotelService.getHotels(arr)
+    
+    /** Selectable hotels */
+    private hotels: HotelInterface[];
+    
+    /**
+     * Use hotel service to get corresponding hotels.
+     * Clean hotels if flight is undefined
+     */
+    private search(): void {
+        console.log(this.model);
+        if (!this.model) {
+            this.hotels = null;
+            return;
+        }
+        
+        this.hotelService.getHotels(this.model.airport_arrival)
             .subscribe(
-                f => this.hotels = f,
-                error => alert(`Server error. Try again later`));
+                hotels => this.hotels = hotels,
+                console.error
+            );
     }
-
-
+    
+    constructor(private hotelService: HotelService) {}
 }
