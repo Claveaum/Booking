@@ -7,8 +7,9 @@ import {FlightInterface} from "./model/flightInterface";
 import {HotelInterface} from "./model/hotelInterface";
 import {Reservation} from "./model/reservation";
 import {FlightService} from "./service/flightService";
-import {FlightFormComponent} from "./component/flightFormComponent";
-import {HotelFormComponent} from "./component/hotelFormComponent";
+import {FlightFormComponent} from "./component/form/flightFormComponent";
+import {HotelFormComponent} from "./component/form/hotelFormComponent";
+
 @Component({
     selector: 'my-app',
     templateUrl:'../html/app.html',

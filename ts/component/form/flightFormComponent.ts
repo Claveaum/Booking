@@ -1,14 +1,14 @@
 import {Component,EventEmitter,OnInit,Output} from 'angular2/core';
 import {NgForm}    from 'angular2/common';
 import {HTTP_PROVIDERS} from "angular2/http";
-import {FlightImpl} from "../model/flightImpl";
-import {FlightService} from "../service/flightService";
-import {FlightInterface} from "../model/flightInterface";
-import {FlightListItemComponent} from './flightListItemComponent';
+import {FlightImpl} from "../../model/flightImpl";
+import {FlightService} from "../../service/flightService";
+import {FlightInterface} from "../../model/flightInterface";
+import {FlightListItemComponent} from '../list-item/flightListItemComponent';
 
 @Component({
     selector: 'flight-form',
-    templateUrl: 'html/flight-form.component.html',
+    templateUrl: 'html/form/flight-form.component.html',
     providers:[FlightService,HTTP_PROVIDERS],
     directives: [FlightListItemComponent]
 })

@@ -1,13 +1,13 @@
 import {Component,EventEmitter,Input,Output} from 'angular2/core';
-import {DateFromStringPipe} from '../utils/pipes/dateFromStringPipe';
-import {FlightInterface} from '../model/flightInterface';
+import {DateFromStringPipe} from '../../util/pipe/dateFromStringPipe';
+import {FlightInterface} from '../../model/flightInterface';
 
 /**
  * Flight view
  */
 @Component({
     selector: 'flight',
-    templateUrl: 'html/flight-list-item.component.html',
+    templateUrl: 'html/list-item/flight-list-item.component.html',
     events: ['selected'],
     pipes: [DateFromStringPipe]
 })
