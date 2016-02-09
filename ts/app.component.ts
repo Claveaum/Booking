@@ -18,11 +18,15 @@ import {HotelFormComponent} from "./component/form/hotelFormComponent";
 })
 export class AppComponent{
     public selectedFlight: FlightInterface;
-    public selectedHotels: HotelInterface[];
+    public selectedHotel: HotelInterface;
     public reservation : Reservation;
 
     updateFlight(updatedFlight :FlightInterface){
         this.selectedFlight = updatedFlight;
+    }
+    
+    private updateHotel(updatedHotel: HotelInterface): void {
+        this.selectedHotel = updatedHotel;
     }
     get test() { return JSON.stringify(this.selectedFlight); }
 

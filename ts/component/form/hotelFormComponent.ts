@@ -1,4 +1,4 @@
-import {Component,Input} from 'angular2/core';
+import {Component,EventEmitter,Input,Output} from 'angular2/core';
 import {NgForm}    from 'angular2/common';
 import {HTTP_PROVIDERS} from "angular2/http";
 import {Observable} from 'rxjs/Rx';
@@ -22,6 +22,8 @@ export class HotelFormComponent{
         this.search();
     }
     
+    @Output('hotel-selected') hotelEvent = new EventEmitter<HotelInterface>(); 
+    
     /** Selectable hotels */
     private hotels: HotelInterface[];
     
@@ -41,6 +43,11 @@ export class HotelFormComponent{
                 hotels => this.hotels = hotels,
                 console.error
             );
+    }
+    
+    hotelSelected(hotel: HotelInterface): void {
+        console.log(`Selected hotel ${hotel}`);
+        this.hotelEvent.emit(hotel);
     }
     
     constructor(private hotelService: HotelService) {}

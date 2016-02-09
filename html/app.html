@@ -1,3 +1,2 @@
 <flight-form (flightEvent)="updateFlight($event)"></flight-form>
-<hotel-form [flight]="selectedFlight"></hotel-form>
-<div>{{test}}</div>
+<hotel-form [flight]="selectedFlight" (hotel-selected)="updateHotel($event)"></hotel-form>
