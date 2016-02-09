@@ -4,11 +4,13 @@ import {HTTP_PROVIDERS} from "angular2/http";
 import {FlightImpl} from "../model/flightImpl";
 import {FlightService} from "../service/flightService";
 import {FlightInterface} from "../model/flightInterface";
+import {FlightListItemComponent} from './flightListItemComponent';
 
 @Component({
     selector: 'flight-form',
     templateUrl: 'html/flight-form.component.html',
     providers:[FlightService,HTTP_PROVIDERS],
+    directives: [FlightListItemComponent]
 })
 export class FlightFormComponent{
     model = new FlightImpl('','','','','');
@@ -33,7 +35,7 @@ export class FlightFormComponent{
                 error => alert(`Server error. Try again later`));
     }
 
-    onClickFlight(flight : FlightInterface){
+    onClickFlight(flight: FlightInterface){
         this.flightEvent.emit(flight);
     }
 

@@ -1,27 +1,29 @@
 {{diagnostic}}
 <div class="container">
-    <h1>Flight Form</h1>
-    <form (ngSubmit)="onSubmit()">
-        <div class="form-group">
-            <label for="airport_departure">Departure</label>
-            <input type="text" class="form-control" required
-                   [(ngModel)]="model.airport_departure" >
-        </div>
-        <div class="form-group">
-            <label for="airport_arrival">Arrival</label>
-            <input type="text" class="form-control" required
-                   [(ngModel)]="model.airport_arrival" >
-        </div>
-        <div class="form-group">
-            <label for="date_departure">Departure date</label>
-            <input type="date" class="form-control" required
-                   [(ngModel)]="model.date_departure" >
-        </div>
-        <button type="submit" class="btn btn-default">Submit</button>
-    </form>
+    <div class="row">
+        <h1>Flight Form</h1>
+        <form (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                <label for="airport_departure">Departure</label>
+                <input type="text" class="form-control" required [(ngModel)]="model.airport_departure">
+            </div>
+            <div class="form-group">
+                <label for="airport_arrival">Arrival</label>
+                <input type="text" class="form-control" required [(ngModel)]="model.airport_arrival">
+            </div>
+            <div class="form-group">
+                <label for="date_departure">Departure date</label>
+                <input type="date" class="form-control" required [(ngModel)]="model.date_departure">
+            </div>
+            <button type="submit" class="btn btn-default">Submit</button>
+        </form>
 
-    <ul *ngIf="submitted" class="collection with-header">
-        <li class="collection-header"><h4>Liste des vols {{model.airport_departure}} - {{model.airport_arrival}} </h4></li>
-        <li class="collection-item" *ngFor="#flight of flights"><div>{{flight.date_departure}} - {{flight.date_arrival}} : {{flight.price}} €<i (click)="onClickFlight(flight)" class="material-icons secondary-content">send</i></div></li>
-    </ul>
+        <ul *ngIf="submitted" class="collection with-header" >
+            <li class="collection-header">
+                <h4>Liste des vols {{model.airport_departure}} - {{model.airport_arrival}} </h4></li>
+            <li class="collection-item container" *ngFor="#flight of flights">
+                <flight [model]="flight" (selected)="onClickFlight(flight)" ></flight>
+            </li>
+        </ul>
+    </div>
 </div>

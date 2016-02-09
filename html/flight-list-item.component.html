@@ -1,0 +1,12 @@
+<!-- Flight list item -->
+<div class="row">
+    <div class="col m5">
+        <p class="lead">{{ model.date_departure | dateFromString:'shortDate' }} - {{ model.date_arrival | dateFromString:'shortDate' }}</p>
+    </div>
+    <div class="col s8 m5">
+        <p class="lead">{{ model.price | currency }}</p>
+    </div>
+    <div class="valign-wrapper col s4 m2">
+        <i (click)="onSelection()" class="valign material-icons secondary-content">send</i>
+    </div>
+</div>
