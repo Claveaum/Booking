@@ -1,11 +1,16 @@
 import {Injectable} from 'angular2/core';
-import {Http}       from 'angular2/http';
+import {Http,Headers,RequestOptionsArgs}       from 'angular2/http';
 import {BookingInterface}       from '../model/bookingInterface';
 import {Observable} from 'rxjs/Rx';
 
 @Injectable()
 export class BookingService {
-    private static url = 'http://localhost:5300/reservation';
+    private static url = 'http://192.168.56.99:59560/reservation';
+    private static httpRequestArgs = {
+        headers: new Headers({
+            "Content-Type": "application/json"
+        })
+    };
     
     constructor(private http:Http) {
     }
@@ -14,7 +19,7 @@ export class BookingService {
      * Checkout the given booking
      */
     public checkout(booking: BookingInterface): void {
-        this.http.post(BookingService.url, JSON.stringify(booking))
+        this.http.post(BookingService.url, JSON.stringify(booking), BookingService.httpRequestArgs)
             .subscribe(console.log, console.error);
     }
 
