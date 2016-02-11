@@ -8,7 +8,8 @@ export class BookingImpl implements BookingInterface {
     }
 
     constructor(public flight?: FlightInterface,
-                public hotel?:HotelInterface) {}
+                public hotel?:HotelInterface,
+                public client?: string) {}
 
 
 }
