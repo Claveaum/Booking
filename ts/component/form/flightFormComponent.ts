@@ -13,7 +13,7 @@ import {FlightListItemComponent} from '../list-item/flightListItemComponent';
     directives: [FlightListItemComponent]
 })
 export class FlightFormComponent{
-    model = new FlightImpl('','','','','');
+    model = new FlightImpl('','','','','',0);
     public flights : FlightInterface[];
     @Output() flightEvent = new EventEmitter();
     submitted = false;

@@ -15,6 +15,7 @@ export class FlightService {
         params.set('date',date);
         params.set('airport_departure',airport_departure);
         params.set('airport_arrival',airport_arrival);
+        params.set('flexible', <string>2);
 
         var options = new RequestOptions({
            search: params
