@@ -1,5 +1,5 @@
 import {Injectable} from 'angular2/core';
-import {Http,Headers,RequestOptionsArgs}       from 'angular2/http';
+import {Http,Headers,Response,RequestOptionsArgs}       from 'angular2/http';
 import {BookingInterface}       from '../model/bookingInterface';
 import {Observable} from 'rxjs/Rx';
 
@@ -18,9 +18,8 @@ export class BookingService {
     /**
      * Checkout the given booking
      */
-    public checkout(booking: BookingInterface): void {
-        this.http.post(BookingService.url, JSON.stringify(booking), BookingService.httpRequestArgs)
-            .subscribe(console.log, console.error);
+    public checkout(booking: BookingInterface): Observable<Response> {
+        return this.http.post(BookingService.url, JSON.stringify(booking), BookingService.httpRequestArgs);
     }
 
     private logAndPassOn(error:Error) {
